@@ -1,5 +1,5 @@
-# original source #2: https://github.com/brunopasseti/cmake-cplex
-# Modified by Jack Cheng to make it work with arm64
+# Original Source #2: https://github.com/brunopasseti/cmake-cplex
+# Modified by Jack Cheng to make it work with arm64 and cpoptimizer
 
 # Original Source: https://github.com/martinsch/pgmlink
 # Modified by Bruno Passeti <brunopassetidev@gmail.com>
