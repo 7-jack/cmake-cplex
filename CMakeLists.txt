@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project(cmake-cplex)
 set (CMAKE_CXX_STANDARD 20)
 
-# # Packages
+# Packages
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 find_package(CPLEX REQUIRED)
 
@@ -24,7 +24,11 @@ set(INCLUDE_DIRECTORY
     ${CMAKE_SOURCE_DIR}/include
     ${CPLEX_INCLUDE_DIRS})
 set(LIBRARIES 
-    ${CPLEX_LIBRARIES})
+    ${CPLEX_CPOPTIMIZER_LIBRARY}
+    ${CPLEX_LIBRARIES}
+    ${CPLEX_ILOCPLEX_LIBRARY}
+    ${CPLEX_CONCERT_LIBRARY}
+    )
 
 # Target
 add_executable(${EXEC_NAME} ${SOURCES})
