@@ -65,6 +65,7 @@ if(WIN32)
     set(CPLEX_WIN_PLATFORM "${CPLEX_WIN_BITNESS}_windows_vs${CPLEX_WIN_VS_VERSION}/stat_${CPLEX_WIN_LINKAGE}")
 
 else()
+    # FILE(GLOB CPLEX_POSSIBLE_PATHS "/Applications/CPLEX_Studio*/") # use either this or the line below, depending on version
     FILE(GLOB CPLEX_POSSIBLE_PATHS "/Applications/CPLEX_Studio*/" "/local/projects/cplex/CPLEX_Studio221") # this may be buggy if not 211
     list(SORT CPLEX_POSSIBLE_PATHS COMPARE FILE_BASENAME ORDER DESCENDING)
     list(GET CPLEX_POSSIBLE_PATHS 0 CPLEX_POSSIBLE_PATH)
