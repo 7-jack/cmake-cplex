@@ -1,5 +1,5 @@
-# Original Source #2: https://github.com/brunopasseti/cmake-cplex
-# Modified by Jack Cheng to make it work with arm64 and cpoptimizer
+# original source #2: https://github.com/brunopasseti/cmake-cplex
+# Modified by Jack Cheng to make it work with arm64
 
 # Original Source: https://github.com/martinsch/pgmlink
 # Modified by Bruno Passeti <brunopassetidev@gmail.com>
@@ -65,7 +65,7 @@ if(WIN32)
     set(CPLEX_WIN_PLATFORM "${CPLEX_WIN_BITNESS}_windows_vs${CPLEX_WIN_VS_VERSION}/stat_${CPLEX_WIN_LINKAGE}")
 
 else()
-    FILE(GLOB CPLEX_POSSIBLE_PATHS "/Applications/CPLEX_Studio*/")
+    FILE(GLOB CPLEX_POSSIBLE_PATHS "/Applications/CPLEX_Studio*/" "/local/projects/cplex/CPLEX_Studio221") # this may be buggy if not 211
     list(SORT CPLEX_POSSIBLE_PATHS COMPARE FILE_BASENAME ORDER DESCENDING)
     list(GET CPLEX_POSSIBLE_PATHS 0 CPLEX_POSSIBLE_PATH)
     message("possible paths: ${CPLEX_POSSIBLE_PATHS}")
